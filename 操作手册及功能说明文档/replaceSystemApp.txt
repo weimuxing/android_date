@@ -1,0 +1,65 @@
+shell@grape:/ $ 
+shell@grape:/ $ 
+shell@grape:/ $ 
+shell@grape:/ $ su                                                                           ------------step1, get super user permission
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # mount -o remount,rw /system                                                ------------step2, remount folder
+[  430.508536] EXT4-fs (mmcblk0p14): re-mounted. Opts: (null)
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # cp mnt/usb/sda1/MTvService.apk system/app/MTvService.apk                   ------------step3, copy the apk to replace the existing one
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # ll system/app/MTvService.apk                                               ------------step4, check the copyright of the new file if it is not 644, do next step, if yes skip step5.
+-rw-r--r-- root     root       318649 1970-01-02 06:23 MTvService.apk
+shell@grape:/ # 
+shell@grape:/ # chmod 644 system/app/MTvService.apk                                        ------------step5, change copyright of the file.(not necessary)
+shell@grape:/ # sync									   ------------step6, sync commond.
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ #
+shell@grape:/ # reboot                                                                         ----------step7, input reboot to resart the TV set,
+[ 1478.744279] SysRq : Emergency Remount R/O
+[ 1478.750878] EXT4-fs (mmcblk0p10): re-mounted. Opts: (null)
+[ 1478.764947] EXT4-fs (mmcblk0p9): re-mounted. Opts: (null)
+[ 1478.789418] EXT4-fs (mmcblk0p12): re-mounted. Opts: (null)
+[ 1478.797628] EXT4-fs (mmcblk0p14): re-mounted. Opts: (null)
+[ 1478.805943] EXT4-fs (mmcblk0p15): re-mounted. Opts: (null)
+[ 1478.819785] EXT4-fs (mmcblk0p16): re-mounted. Opts: (null)
+[ 1478.829219] Emergency Remount complete
+[ 1478.851043] Restarting system with command ''.
+UART_115200
+
+AC_ON
+AutoDQS0-[456789ABCD][3456789ABCD][3456789ABC][3456789ABCDE]-[0x8788]
+AutoDQS1-[3456789ABCD][3456789ABCD][23456789ABC][23456789ABCD]-[0x7788]
+BIST0-OK
+BIST1-OK
+_U
+Relocation Offset is: 01126000
+[AT][MB][start ub][761]
+
+U-Boot 2011.06-00000-g46ce1ae-dirty (Jul 20 2016 - 15:43:40)
+
+[NOS] UtopiaInit
+1st UTOPIARegisterToUtopia is done[MBoot] Driver Register to Utopia
+uboot held at [3d7ddf60~3f700000],size=01f220a0
+CPU  : Madison
+Board: BD_MST066B_10AVX_14091_MADISON
+DRAM:  503 MiB
+Now running in RAM - U-Boot at: 3e800000
+
+eMMC: DDR 48MHz 
+eMMC 7.28 GB [E8FFF8h]
+In:    serial
+Out:   serial
+Err:   serial
+Net:   No ethernet found.
+MAC:  0x0: 0x30: 0x1b: 0xfa:0x94: 0x46
+[AT][MBoot][Driver Init][1069]
+MPOOL size : 0x200000

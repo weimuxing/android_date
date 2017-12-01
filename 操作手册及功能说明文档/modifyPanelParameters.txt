@@ -1,0 +1,110 @@
+shell@grape:/ $ 
+shell@grape:/ $ 
+shell@grape:/ $ 
+shell@grape:/ $ su                                                                           ------------step1, get super user permission
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # mount -o remount,rw /tvconfig                                                ------------step2, remount folder
+[  430.508536] EXT4-fs (mmcblk0p14): re-mounted. Opts: (null)
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # busybox vi tvconfig/config/panel/FullHD_BOEI490WU1_M029.ini                  ------------step3, using vi to edit file
+                            #E_PNL_CHG_VTOTAL = 2,              
+m_bPanelNoiseDith       =   1;                                                    
+                                                                  
+###########################  
+#  Panel backlight related params.         #                    
+###########################                 
+                           
+u32PeriodPWM            = 0x100;                                        
+u32DutyPWM              = 0xFF; 
+u16DivPWM               = 0x00;
+bPolPWM                 = 1; #0:NON_INVERSE
+u16MaxPWMvalue          = 0xFF;            
+u16MinPWMvalue          = 0x48;
+                               
+###########################
+#  3D video flag.  #          
+###########################              
+bPanel3DFreerunFlag    =   0;#to check if this panel should force freerun or not under 3D mode;
+                             #use defualt mode = 0,                                            
+                             #forcefreerun     = 1,        
+bPanel2DFreerunFlag    =   0;#to check if this panel should force freerun or not under 2D mode; ----------step4, press key "I" to enter insert mode, change the 0 to 1
+                             #use defualt mode = 0,                                            
+                             #forcefreerun     = 1,
+bPanelReverseFlag      =   0;#to check if this panel should Set 3D LRSwitch or not under 3D mode;
+                             #use default LR mode = 0,                                           
+                             #Set 3D LRSwitch once =1,
+                                                      
+osdWidth                = 1280;
+osdHeight               = 720;   
+b3DOSDLRSwitchFlag                      = 0;
+                                            
+[ursa]                        
+                              
+###########################
+#       Ursa output       #
+###########################
+                                                                                               ----------step5, press ESC to quit insert mode
+                                                                                               ----------step6, input :wq to save and exit the vi editer
+shell@grape:/ # reboot                                                                         ----------step7, input reboot to resart the TV set, with ENTER key hold on to enter mboot command line
+[ 1478.744279] SysRq : Emergency Remount R/O
+[ 1478.750878] EXT4-fs (mmcblk0p10): re-mounted. Opts: (null)
+[ 1478.764947] EXT4-fs (mmcblk0p9): re-mounted. Opts: (null)
+[ 1478.789418] EXT4-fs (mmcblk0p12): re-mounted. Opts: (null)
+[ 1478.797628] EXT4-fs (mmcblk0p14): re-mounted. Opts: (null)
+[ 1478.805943] EXT4-fs (mmcblk0p15): re-mounted. Opts: (null)
+[ 1478.819785] EXT4-fs (mmcblk0p16): re-mounted. Opts: (null)
+[ 1478.829219] Emergency Remount complete
+[ 1478.851043] Restarting system with command ''.
+UART_115200
+
+AC_ON
+AutoDQS0-[456789ABCD][3456789ABCD][3456789ABC][3456789ABCDE]-[0x8788]
+AutoDQS1-[3456789ABCD][3456789ABCD][23456789ABC][23456789ABCD]-[0x7788]
+BIST0-OK
+BIST1-OK
+_U
+Relocation Offset is: 01126000
+[AT][MB][start ub][761]
+
+U-Boot 2011.06-00000-g46ce1ae-dirty (Jul 20 2016 - 15:43:40)
+
+[NOS] UtopiaInit
+1st UTOPIARegisterToUtopia is done[MBoot] Driver Register to Utopia
+uboot held at [3d7ddf60~3f700000],size=01f220a0
+CPU  : Madison
+Board: BD_MST066B_10AVX_14091_MADISON
+DRAM:  503 MiB
+Now running in RAM - U-Boot at: 3e800000
+
+eMMC: DDR 48MHz 
+eMMC 7.28 GB [E8FFF8h]
+In:    serial
+Out:   serial
+Err:   serial
+Net:   No ethernet found.
+MAC:  0x0: 0x30: 0x1b: 0xfa:0x94: 0x46
+[AT][MBoot][Driver Init][1069]
+MPOOL size : 0x200000
+
+Changelist:     24543697
+============= set bootargs ===============
+Hit any key to stop autoboot:  0 
+<< MStar >># 
+<< MStar >># 
+
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># set db_table 0; save ;reset                                                          ----------step8, reload db_table to make what we modified working

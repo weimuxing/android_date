@@ -1,0 +1,96 @@
+shell@arbutus:/ $ 
+shell@arbutus:/ $ 
+shell@arbutus:/ $ 
+shell@arbutus:/ $ su                                                           ----------step1, 获取超级用户权限
+shell@arbutus:/ # 
+shell@arbutus:/ # 
+shell@arbutus:/ # 
+shell@arbutus:/ # echo 1 > proc/sys/kernel/printk                              ----------step2，关掉kernel打印信息。非必需步骤，用于排除打印信息干扰
+shell@arbutus:/ # 
+shell@arbutus:/ # 
+shell@arbutus:/ # 
+shell@arbutus:/ # mount -o remount,rw /tvconfig                                ----------step3，重新挂在tvconfig文件夹，获取修改权限
+shell@arbutus:/ # 
+shell@arbutus:/ #    
+shell@arbutus:/ # ll tvconfig/boot0.jpg                                        ----------step4，查看logo文件信息
+-rw-r--r-- root     root       221262 2017-02-28 18:54 boot0.jpg
+shell@arbutus:/ # 
+shell@arbutus:/ # 
+shell@arbutus:/ #                                                              
+shell@arbutus:/ # cp mnt/usb/sda1/boot0.jpg tvconfig/boot0.jpg                 ----------step5，把U盘根目录下的新logo文件boot0.jpg拷贝到系统中
+shell@arbutus:/ # 
+shell@arbutus:/ # 
+shell@arbutus:/ # ll tvconfig/boot0.jpg                                        ----------step6，确认logo文件信息，拷贝成功后时间会有变化，注意文件权限信息要一致
+-rw-r--r-- root     root       221262 2017-02-28 18:54 boot0.jpg
+shell@arbutus:/ # 
+shell@arbutus:/ # 
+shell@arbutus:/ # 
+shell@arbutus:/ # reboot                                                       ----------step7，重启，在重启过程中按住电脑Enter键以进入mboot命令行。
+[  219.009046] Restarting system with command ''.
+UART_115200
+
+AC_ON
+BIST0-OK
+BIST1-OK
+_U
+Relocation Offset is: 01200000
+[AT][MB][start ub][429]
+
+U-Boot 2011.06-00000-g314a4dc676-dirty (Feb 09 2017 - 17:29:36)  MBOT-1106.0.10.1340012
+
+
+msIR_Initialize
+Function = SYSOpen, Line = 810, current resource pri_shm content is: 0
+Function = SYSOpen, Line = 829, [SYS INFO] OPEN INSTANCE...
+create instance at 2B6AE898 with private size 108 bytes at 2B6AE8E0
+
+[MIU INFO] miu opencreate instance at 2B6AE950 with private size 80 bytes at 2B6AE998
+create instance at 2B6AE9F0 with private size 48 bytes at 2B6AEA38
+
+uboot held at [2B3DDF60~2CD00000],size=019220A0
+CPU  : Monet
+Board: BD_MST087B_10AJSM_MONET
+DRAM:  205 MiB
+Now running in RAM - U-Boot at: 2BE00000
+
+eMMC: HS200 200MHz 
+eMMC 3.68 GB [75FFF8h]
+In:    serial
+Out:   serial
+Err:   serial
+Net:   mmc change mount : license
+Size of file "/macandci.ini" from mmc device 0 partition license: 284 bytes
+Loading file "/macandci.ini" at offset 0x0 from mmc device 0 partition license
+284 bytes read
+sizeof( model ini script ) --------> 284 bytes
+[mac address] macandci.ini path --> 98:02:d8:13:62:a3
+parse_mac_ini,153load mac from sn successNo ethernet found.
+MAC:  0x98: 0x2: 0xD8: 0x13:0x62: 0xA3
+#######################################################################
+#######################################################################
+[AT][MBoot][Driver Init][603]
+music is disabled.
+MPOOL size : 0x200000
+
+Changelist:     24543697
+============= set bootargs ===============
+Hit any key to stop autoboot:  0 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># set db_table 0;save;reset                                         ------------step8，重新加载数据。回车后重启系统，开机确认。   

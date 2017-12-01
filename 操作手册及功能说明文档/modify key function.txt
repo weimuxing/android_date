@@ -1,0 +1,175 @@
+shell@grape:/ # su
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # mount -o remount,rw /system
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # busybox vi system/etc/                                         
+NOTICE.html.gz                          mixer_paths.xml                      
+Wireless/                               mkshrc                               
+airport.key                             omx.cfg                              
+audio_effects.conf                      permissions/                         
+audio_policy.conf                       ppp/                                 
+bluetooth/                              recovery-resource.dat                
+clatd.conf                              resolv.conf                          
+dhcpcd/                                 security/                            
+event-log-tags                          services                             
+fallback_fonts.xml                      specify_mali_memlocation_packages.xml
+feature.xml                             system_fonts.xml                     
+hosts                                   uhd30hz_keeping_packages.xml         
+keymap.properties                       uhd_keeping_packages.xml             
+media_codecs.xml                        wifi/                                
+media_profiles.xml                      
+usybox vi system/usr/keylayout/Vend                                           <
+Vendor_0079_Product_0011.kl             Vendor_1689_Product_fd00.kl
+Vendor_045e_Product_028e.kl             Vendor_1689_Product_fd01.kl
+Vendor_046d_Product_c216.kl             Vendor_1689_Product_fe00.kl
+Vendor_046d_Product_c219.kl             Vendor_1bad_Product_f016.kl
+Vendor_046d_Product_c21d.kl             Vendor_1bad_Product_f023.kl
+Vendor_046d_Product_c21f.kl             Vendor_1bad_Product_f027.kl
+Vendor_046d_Product_c294.kl             Vendor_1bad_Product_f036.kl
+Vendor_046d_Product_c299.kl             Vendor_1d79_Product_0009.kl
+Vendor_046d_Product_c532.kl             Vendor_22b8_Product_093d.kl
+Vendor_054c_Product_0268.kl             Vendor_2378_Product_100a.kl
+Vendor_0583_Product_2060.kl             Vendor_3697_Product_0001.kl
+Vendor_05ac_Product_0239.kl             Vendor_3697_Product_0002.kl
+Vendor_1038_Product_1412.kl             Vendor_3697_Product_0003.kl
+Vendor_12bd_Product_d015.kl             
+shell@grape:/ # busybox vi system/usr/keylayout/Vendor_36                      
+Vendor_3697_Product_0001.kl             Vendor_3697_Product_0003.kl
+Vendor_3697_Product_0002.kl             
+shell@grape:/ # busybox vi system/usr/keylayout/Vendor_3697_Product_0001.kl  ------>使用vi编辑遥控kl文件：
+                                                    （输入i切换编辑模式，编辑结束后按esc键退出编辑模式，输入“:wq!”回车保存退出）
+
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# MStar Smart TV IR Receiver.
+#
+
+key 116     POWER                   WAKE
+key 11      0
+key 2       1
+key 3       2
+key 4       3
+key 5       4
+key 6       5
+key 7       6
+key 8       7
+key 9       8
+key 10      9
+key 307     INDEX                                   
+
+  .
+  .
+  .
+                   
+# Common extended    
+key 392     SOUND_MODE
+key 212     PICTURE_MODE  -------->图像模式键 ，将PICTURE_MODE改为SCREENSHOT即可    
+key 372     ASPECT_RATIO
+key 363     CHANNEL_RETURN                      
+
+  .
+  .
+  .
+          
+key 392     SOUND_MODE         
+key 372     ASPECT_RATIO  
+key 363     CHANNEL_RETURN
+key 395     LIST          
+key 470     TV_SETTING                          
+key 471     SCREENSHOT -------------->这个是截屏键                        
+key 356     TV_POWER                            
+
+  .
+  .                                              
+  .    
+                              
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # reboot  -------------->重启命令                                                       
+[  314.950355] SysRq : Emergency Remount R/O
+[  315.060336] Restarting system with command ''.
+UART_115200
+
+AC_ON
+AutoDQS0-[456789ABCD][23456789ABC][3456789ABC][456789ABCD]-[0x8778]
+AutoDQS1-[456789ABCDE][3456789ABCDE][23456789ABC][3456789ABCD]-[0x8789]
+BIST0-OK
+BIST1-OK
+_U
+Relocation Offset is: 01126000
+[AT][MB][start ub][294]
+
+U-Boot 2011.06-00000-g52af44c-dirty (Dec 30 2015 - 19:41:14)
+
+[NOS] UtopiaInit
+1st UTOPIARegisterToUtopia is done[MBoot] Driver Register to Utopia
+uboot held at [3d7ddf60~3f700000],size=01f220a0
+CPU  : Madison
+Board: BD_MST066B_10AVX_14091_MADISON
+DRAM:  503 MiB
+Now running in RAM - U-Boot at: 3e800000
+
+eMMC: DDR 48MHz 
+eMMC 3.68 GB [75FFF8h]
+In:    serial
+Out:   serial
+Err:   serial
+Net:   No ethernet found.
+MAC:  0x0: 0x30: 0x1b: 0x42:0x38: 0xc9
+[AT][MBoot][Driver Init][577]
+MPOOL size : 0x200000
+
+Changelist:     24543697
+============= set bootargs ===============
+Hit any key to stop autoboot:  0 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># set db_table 0;save;reset; --------->此步此时不是必需的。
+   
+   .
+   .
+   .
+
+shell@grape:/ # 
+shell@grape:/ # cd mnt/                                                        
+asec/     media_rw/ samba/    secure/   usb/      
+iso/      obb/      sdcard/   shell/    
+shell@grape:/ # cd mnt/sdcard/                                                 
+Alarms/         Download/       Music/          Podcasts/       
+Android/        LOST.DIR/       Notifications/  Ringtones/      
+DCIM/           Movies/         Pictures/       gallery/        
+nt/sdcard/Pictures/Screenshots/                                               <
+Screenshot_2007-01-01-12-01-35.png      Screenshot_2007-01-01-12-01-47.png
+ ------------------->截屏图片路径：mnt/sdcard/Pictures/Screenshots/

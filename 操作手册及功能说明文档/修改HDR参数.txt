@@ -1,0 +1,124 @@
+shell@grape:/ $ 
+shell@grape:/ $ su                                                                           ------------step1, get super user permission 第一步，获取超级用户权限
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # 
+shell@grape:/ # mount -o remount,rw /tvconfig                                                ------------step2, remount folder       重新挂载文件夹                       
+[ 1392.002754] EXT4-fs (mmcblk0p14): re-mounted. Opts: (null)
+sybox vi tvconfig/config/model/                                               <
+Customer_1.ini            Customer_2.ini            Customer_auto_test.ini
+shell@grape:/ # busybox vi tvconfig/config/model/Customer_1.ini i                            ------------step3, using vi to edit file       使用vi工具进行编辑        
+AP_SW_VERSION = 0x0001  
+                                                                        
+[ModuleTest]            
+m_pModuleTestFolder = "";
+                        
+[VB1_Connector]                       
+8V_Order = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+4V_Order = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+2V_Order = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};                                                        
+4O_Order = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};          
+2O_Order = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};                                  
+                                                                  
+[Hdr]                                                 
+low_Smin = 17;                                                  
+low_Smed = 410;                                          
+low_Smax = 920;                                                    
+low_Tmin = 64;                                                   
+low_Tmed = 420;                                             
+low_Tmax = 712;                                            
+low_MidSourceOffset = 410;                            
+low_MidTargetOffset = 420;                            
+low_MidSourceRatio = 300;                                                                                 
+low_MidTargetRatio = 500;                             
+                                    
+middle_Smin = 17;
+middle_Smed = 438;        
+middle_Smax = 920;                 
+middle_Tmin = 54;         
+middle_Tmed = 485;        
+middle_Tmax = 712;                          
+middle_MidSourceOffset = 430;                
+middle_MidTargetOffset = 480;
+middle_MidSourceRatio = 400;
+middle_MidTargetRatio = 400;
+                         
+high_Smin = 17;                                                                                 -------step4,input i to start the edit mode,change the data of HDR setting. 按i键进入编辑模式，修改HDR参数设置
+high_Smed = 418;             
+high_Smax = 920;                                   
+high_Tmin = 54;              
+high_Tmed = 510;             
+high_Tmax = 712;             
+high_MidSourceOffset = 418;                       
+high_MidTargetOffset = 510;                                                                      
+high_MidSourceRatio = 200;                                                                      
+high_MidTargetRatio = 500;                                                                                   
+                            
+#@CRC=0x2863                                                                                             
+#@CRC=0x2B60                                                                                               
+#@CRC=0x2C6D                                                                                                                                
+- config/model/Customer_1.ini 390/403 96%
+
+                                                                                               ----------step5, press ESC to quit insert mode    按ESC退出编辑模式，
+                                                                                               ----------step6, input :wq to save and exit the vi editer  输入：wq退出vi编辑
+shell@grape:/ # reboot                                                                         ----------step7, input reboot to resart the TV set, with ENTER key hold on to enter mboot command line
+[ 1478.744279] SysRq : Emergency Remount R/O                                                                     输入reboot回车重启，按回车后一直按住Enter键不动，进入mboot命令行
+[ 1478.750878] EXT4-fs (mmcblk0p10): re-mounted. Opts: (null)
+[ 1478.764947] EXT4-fs (mmcblk0p9): re-mounted. Opts: (null)
+[ 1478.789418] EXT4-fs (mmcblk0p12): re-mounted. Opts: (null)
+[ 1478.797628] EXT4-fs (mmcblk0p14): re-mounted. Opts: (null)
+[ 1478.805943] EXT4-fs (mmcblk0p15): re-mounted. Opts: (null)
+[ 1478.819785] EXT4-fs (mmcblk0p16): re-mounted. Opts: (null)
+[ 1478.829219] Emergency Remount complete
+[ 1478.851043] Restarting system with command ''.
+UART_115200
+
+AC_ON
+AutoDQS0-[456789ABCD][3456789ABCD][3456789ABC][3456789ABCDE]-[0x8788]
+AutoDQS1-[3456789ABCD][3456789ABCD][23456789ABC][23456789ABCD]-[0x7788]
+BIST0-OK
+BIST1-OK
+_U
+Relocation Offset is: 01126000
+[AT][MB][start ub][761]
+
+U-Boot 2011.06-00000-g46ce1ae-dirty (Jul 20 2016 - 15:43:40)
+
+[NOS] UtopiaInit
+1st UTOPIARegisterToUtopia is done[MBoot] Driver Register to Utopia
+uboot held at [3d7ddf60~3f700000],size=01f220a0
+CPU  : Madison
+Board: BD_MST066B_10AVX_14091_MADISON
+DRAM:  503 MiB
+Now running in RAM - U-Boot at: 3e800000
+
+eMMC: DDR 48MHz 
+eMMC 7.28 GB [E8FFF8h]
+In:    serial
+Out:   serial
+Err:   serial
+Net:   No ethernet found.
+MAC:  0x0: 0x30: 0x1b: 0xfa:0x94: 0x46
+[AT][MBoot][Driver Init][1069]
+MPOOL size : 0x200000
+
+Changelist:     24543697
+============= set bootargs ===============
+Hit any key to stop autoboot:  0 
+<< MStar >># 
+<< MStar >># 
+
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># 
+<< MStar >># set db_table 0; save ;reset                                                          ----------step8, reload db_table to make what we modified working 复位数据
