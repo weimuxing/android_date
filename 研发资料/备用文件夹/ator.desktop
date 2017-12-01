@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=0.9.4
+Name=Qt Creator
+Comment=Run Qt Creator
+Icon=/home/xun/qtsdk-2010.04/share/pixmaps/qtcreator_logo_48.png
+Exec=/home/xun/qtsdk-2010.04/bin/qtcreator
+Terminal=false
